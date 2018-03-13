@@ -1,0 +1,23 @@
+{
+  "name": "javasccriptjson",
+  "version": "1.0.0",
+  "description": "first json pakage",
+  "main": "code.js",
+  "scripts": {
+    "styles": "lessc styles.less styles.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skogis6/javascript.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/skogis6/javascript/issues"
+  },
+  "homepage": "https://github.com/skogis6/javascript#readme",
+  "devDependencies": {
+    "less": "^3.0.1"
+  }
+
+}

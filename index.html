@@ -8,22 +8,31 @@
     <title>Document</title>
 </head>
 <body>
+    
     <div class="container">
     <div>
-        <img class="poster" src=""><!-- här ska bilden vara-->
+        <img id="poster" src=""><!-- här ska bilden vara-->
     </div>
-
+    
     <div class="titelinfo">
- <h2 id = movietitle></h2> <!--här ska titeln in -->
-<p id = synopsis></p>  <!-- här ska synopsis vara -->
-   <ul id=Actors>  <!-- här ska Director och Actors vara -->
+        <h1 ></h1> <!--här ska titeln in  (innanför h1 (id = "movietitle"))-->
+        <div class="stars">
+                <span id="1">&#9733;</span>
+                <span id="2">&#9733;</span>
+                <span id="3">&#9733;</span>
+                <span id="4">&#9733;</span>
+                <span id="5">&#9733;</span>
+            </div>
+        <h3 id = "director"></h3>
+<p id = "synopsis"></p>  <!-- här ska synopsis vara -->
+   <ul id="actors">  <!-- här ska Director och Actors vara -->
 
    </ul> 
 
     </div>
 </div>
-
-<script scr="./data.js"></script>
-<script scr="./code.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="./data.js"></script>
+<script src="./code.js"></script>
 </body>
 </html>
