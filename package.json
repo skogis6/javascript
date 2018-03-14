@@ -4,15 +4,18 @@
   "description": "first json pakage",
   "main": "code.js",
   "scripts": {
-    "styles": "lessc styles.less styles.css",
+    "styles": "lessc styles.less distribution/styles.css",
     "bundle": "webpack",
-
-    "start:dev": "webpack-dev-server"
+    "lintless": "stylelint styles.less",
+    "lintjs": "eslint .",
+    "start:dev": "webpack-dev-server",
+    "copyindex": "cp index.html distribution/index.html",
+    "lint": "npm run lintless && npm run lintjs",
+    "build": "npm run bundle && npm run styles && npm run copyindex"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/skogis6/javascript.git"
-    
   },
   "author": "",
   "license": "ISC",
@@ -21,6 +24,8 @@
   },
   "homepage": "https://github.com/skogis6/javascript#readme",
   "devDependencies": {
+    "eslint": "^4.18.2",
+    "stylelint": "^9.1.2",
     "webpack": "^4.1.1",
     "webpack-cli": "^2.0.11",
     "webpack-dev-server": "^3.1.1",
