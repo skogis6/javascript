@@ -7,7 +7,6 @@
     "styles": "lessc styles.less distribution/styles.css",
     "bundle": "webpack",
     "lintless": "stylelint styles.less",
-
     "lintts": "tslint -c tslint.json '*.ts'",
     "start:dev": "webpack-dev-server",
     "copyindex": "cp index.html distribution/index.html",
@@ -25,6 +24,7 @@
   },
   "homepage": "https://github.com/skogis6/javascript#readme",
   "devDependencies": {
+    "@types/jquery": "^3.3.1",
     "less": "^3.0.1",
     "stylelint": "^9.1.2",
     "ts-loader": "^4.0.1",
