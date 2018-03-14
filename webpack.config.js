@@ -2,8 +2,17 @@ let path = require("path");
 const WebpackNotifierPlugin = require("webpack-notifier");
 
 module.exports = {
+    
     mode: 'development',
-    entry: './code.js',
+    entry: './code.ts',
+    resolve: {
+        extensions: ['.ts', '.js']
+      },
+      module:{
+    rules:[
+        {test: /\.ts$/, loader: 'ts-loader'}
+        ]
+      },
     output: {
         path: path.resolve(__dirname, "distribution"),
         filename:'bundle.js'
@@ -20,4 +29,5 @@ module.exports = {
             alwaysNotify:true
         })
     ]
+    
 };

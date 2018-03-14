@@ -66,30 +66,32 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./code.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./code.ts");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./code.js":
+/***/ "./code.ts":
 /*!*****************!*\
-  !*** ./code.js ***!
+  !*** ./code.ts ***!
   \*****************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("let movieData = __webpack_require__(/*! ./data */ \"./data.js\")\r\nlet $ = __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\")\r\n\r\n\r\nfunction renderMovie(movie){\r\n\r\n    \r\n    // document.getElementById(\"movietitle\").innerText =movie.title;\r\n    // document.getElementById(\"synopsis\").innerText = movie.synopsis;\r\n    // document.getElementById(\"director\").innerText = movie.director;\r\n    // document.getElementById(\"poster\").setAttribute(\"src\",movie.imgUrl);\r\n\r\n    /*--------------------------------*/\r\n    // Här kommer JQuerry\r\n    $(\".titelinfo h1\").text(movie.title);\r\n    $(\".titelinfo p\").text(movie.synopsis);\r\n    $(\".container img\").attr(\"src\",movie.imgUrl)\r\n    \r\n    //let actorList =\"\";\r\n    //     for(let i=0; i< movie.actors.length;i++){\r\n    //         actorList += \"<li>\"+movie.actors[i]+\"</li>\";\r\n    //     } \r\n    //  document.getElementById(\"actors\").innerHTML = actorList;\r\n\r\n    /*--------------------------------*/\r\n    // Här kommer JQuerry\r\n    $(\".titelinfo ul\").empty();\r\n    for(let i=0; i<movie.actors.length; i++){\r\n    $(\".titelinfo ul\").append(\"<li>\"+movie.actors[i]+\"</li>\");\r\n    }\r\n}\r\n\r\n    //function changeStarRating(rating){\r\n    // for(let i =1; i <=5;i++){\r\n    //     let star = document.getElementById(\"star\"+i);\r\n    //     if(i<=rating){\r\n    //         star.classList.add(\"filled\");\r\n    //     }\r\n    //     else{\r\n    //         star.classList.remove(\"filled\");\r\n    //     }\r\n    // }\r\n\r\n    /*--------------------------------*/\r\n    // Här kommer JQuerry\r\n    function changeStarRating(rating){\r\n        //console.log(\"CHANGE\", rating)\r\n     $(\".filled\").removeClass(\"filled\");\r\n        for(let i=1;i<=rating;i++){\r\n        $(\"#\"+i).addClass(\"filled\")\r\n        //$(\".stars :nth-child (-n+\"+rating+\")\").addClass(\"filled\");<!-- denna har fel i sig-->\r\n     }\r\n    }\r\n\r\n    //-------------------------------------------------\r\n\r\n    // for(let i=1;i<=5;i++){\r\n    //     let star = document.getElementById(\"star\"+i);\r\n    //         star.addEventListener(\"click\",function(){\r\n    //             changeStarRating(i);\r\n    //         });  \r\n    // }\r\n\r\n    /*--------------------------------*/\r\n    // Här kommer JQuerry\r\n    $(\".stars\").on(\"click\",\"span\",function(e){\r\n        let star = $(e.target);\r\n        let rating = parseInt(star.attr(\"id\"));\r\n        //let rating = Array.from(e.target.parentElement.children).indexOf(e.target)+1;<!-- denna har fel i sig-->\r\n        //console.log(\"wth\", rating)\r\n        changeStarRating(rating);\r\n    });\r\n// alert(\"Hej\")\r\nrenderMovie(movieData);\n\n//# sourceURL=webpack:///./code.js?");
+"use strict";
+eval("\r\n// let movieData = require(\"./data\")\r\n// let $ = require(\"jquery\")\r\nexports.__esModule = true;\r\nvar data_1 = __webpack_require__(/*! ./data */ \"./data.ts\");\r\nvar $ = __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\");\r\nfunction renderMovie(movie) {\r\n    // document.getElementById(\"movietitle\").innerText =movie.title;\r\n    // document.getElementById(\"synopsis\").innerText = movie.synopsis;\r\n    // document.getElementById(\"director\").innerText = movie.director;\r\n    // document.getElementById(\"poster\").setAttribute(\"src\",movie.imgUrl);\r\n    /*--------------------------------*/\r\n    // Här kommer JQuerry\r\n    $(\".titelinfo h1\").text(movie.title);\r\n    $(\".titelinfo p\").text(movie.synopsis);\r\n    $(\".container img\").attr(\"src\", movie.imgUrl);\r\n    //let actorList =\"\";\r\n    //     for(let i=0; i< movie.actors.length;i++){\r\n    //         actorList += \"<li>\"+movie.actors[i]+\"</li>\";\r\n    //     } \r\n    //  document.getElementById(\"actors\").innerHTML = actorList;\r\n    /*--------------------------------*/\r\n    // Här kommer JQuerry\r\n    $(\".titelinfo ul\").empty();\r\n    for (var i = 0; i < movie.actors.length; i++) {\r\n        $(\".titelinfo ul\").append(\"<li>\" + movie.actors[i] + \"</li>\");\r\n    }\r\n}\r\n//function changeStarRating(rating){\r\n// for(let i =1; i <=5;i++){\r\n//     let star = document.getElementById(\"star\"+i);\r\n//     if(i<=rating){\r\n//         star.classList.add(\"filled\");\r\n//     }\r\n//     else{\r\n//         star.classList.remove(\"filled\");\r\n//     }\r\n// }\r\n/*--------------------------------*/\r\n// Här kommer JQuerry\r\nfunction changeStarRating(rating) {\r\n    //console.log(\"CHANGE\", rating)\r\n    $(\".filled\").removeClass(\"filled\");\r\n    for (var i = 1; i <= rating; i++) {\r\n        $(\"#\" + i).addClass(\"filled\");\r\n        //$(\".stars :nth-child (-n+\"+rating+\")\").addClass(\"filled\");<!-- denna har fel i sig-->\r\n    }\r\n}\r\n//-------------------------------------------------\r\n// for(let i=1;i<=5;i++){\r\n//     let star = document.getElementById(\"star\"+i);\r\n//         star.addEventListener(\"click\",function(){\r\n//             changeStarRating(i);\r\n//         });  \r\n// }\r\n/*--------------------------------*/\r\n// Här kommer JQuerry\r\n$(\".stars\").on(\"click\", \"span\", function (e) {\r\n    var star = $(e.target);\r\n    var rating = parseInt(star.attr(\"id\"));\r\n    //let rating = Array.from(e.target.parentElement.children).indexOf(e.target)+1;<!-- denna har fel i sig-->\r\n    //console.log(\"wth\", rating)\r\n    changeStarRating(rating);\r\n});\r\n// alert(\"Hej\")\r\nrenderMovie(data_1.movieData);\r\n\n\n//# sourceURL=webpack:///./code.ts?");
 
 /***/ }),
 
-/***/ "./data.js":
+/***/ "./data.ts":
 /*!*****************!*\
-  !*** ./data.js ***!
+  !*** ./data.ts ***!
   \*****************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-eval("module.exports = {\r\n    title:\"Alien\",\r\n    imgUrl:\"https://images-na.ssl-images-amazon.com/images/M/MV5BNDNhN2IxZWItNGEwYS00ZDNhLThiM2UtODU3NWJlZjBkYjQxXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SY1000_CR0,0,681,1000_AL_.jpg\",\r\n    synopsis:\"After a space merchant vessel perceives an unknown transmission as a distress call, its landing on the source moon finds one of the crew attacked by a mysterious lifeform, and they soon realize that its life cycle has merely begun.\",\r\n    director:\"Ridley Scott\",\r\n    actors:[\"Sigourney Weaver\",\"Tom Skerritt\"]\r\n}\n\n//# sourceURL=webpack:///./data.js?");
+"use strict";
+eval("\r\nexports.__esModule = true;\r\nexports.movieData = {\r\n    title: \"Alien\",\r\n    imgUrl: \"https://images-na.ssl-images-amazon.com/images/M/MV5BNDNhN2IxZWItNGEwYS00ZDNhLThiM2UtODU3NWJlZjBkYjQxXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SY1000_CR0,0,681,1000_AL_.jpg\",\r\n    synopsis: \"After a space merchant vessel perceives an unknown transmission as a distress call, its landing on the source moon finds one of the crew attacked by a mysterious lifeform, and they soon realize that its life cycle has merely begun.\",\r\n    director: \"Ridley Scott\",\r\n    actors: [\"Sigourney Weaver\", \"Tom Skerritt\"]\r\n};\r\n\n\n//# sourceURL=webpack:///./data.ts?");
 
 /***/ }),
 
