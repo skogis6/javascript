@@ -70,5 +70,5 @@ function renderMovie(movie){
         //console.log("wth", rating)
         changeStarRating(rating);
     });
-
+// alert("Hej")
 renderMovie(movieData);
